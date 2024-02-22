@@ -1,0 +1,346 @@
+/* General resets and base styles */
+/* General styles */
+/* Reset margin and padding */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body, html {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6; /* Neutral background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.container {
+    max-width: 800px; /* Wider container */
+    margin: 2% auto; /* More breathing room */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #fff; /* White background for the container */
+}
+
+header {
+    background: #5b62f6; /* Trendy gradient base color */
+    padding: 40px 20px; /* More padding */
+    border-top-left-radius: 15px; /* Rounded corners at the top */
+    border-top-right-radius: 15px;
+    color: #ffffff;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 32px; /* Larger font size */
+}
+
+header p {
+    font-size: 18px; /* Larger font size */
+}
+
+#greeting {
+    margin: 20px 0;
+    font-size: 20px;
+    /* Additional styling */
+}
+
+
+
+
+.quiz-container {
+    padding: 30px; /* More padding inside the quiz container */
+}
+
+.question {
+    background: #ffffff;
+    margin: 20px 0; /* More space between questions */
+    padding: 20px; /* More padding inside questions */
+    border-radius: 8px;
+    border: 1px solid #e0e0e0; /* Subtle border */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.question p {
+    margin-bottom: 30px; /* Space between the question and the options */
+    font-size: 18px; /* Larger font for readability */
+     
+}
+
+.btn {
+    display: block;
+    width: calc(100% - 40px); /* Full width minus padding */
+    padding: 15px; /* Larger buttons */
+    margin: 20px auto;
+    background: #5b62f6; /* Consistent with header */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded buttons */
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover, .btn:focus {
+    background: #434adf; /* Slightly darker on hover/focus */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow for depth */
+}
+
+.results-container {
+    padding: 30px; /* More padding */
+    background: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 18px; /* Larger font size */
+    text-align: center;
+}
+
+/* Option Button Styling */
+
+.question button {
+    display: block; /* Stack buttons vertically */
+    width: 100%; /* Full width for each button */
+    padding: 10px; /* Comfortable padding for tap targets */
+    margin-top: 10px; /* Space between the question and the first button, and between each button */
+    background: #5b62f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center; /* Center text in button */
+}
+
+.question button:hover {
+    background: #434adf;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Slightly smaller container on smaller screens */
+        margin-top: 10%; /* More top margin on smaller screens */
+    }
+    .btn {
+        width: 100%; /* Full width on smaller screens */
+        margin: 15px 0; /* Adjust margin */
+    }
+    header {
+        padding: 30px 20px; /* Adjusted padding on smaller screens */
+    }
+    .question {
+        padding: 25px; /* Adjusted padding on smaller screens */
+    }
+    .results-container, .quiz-container {
+        padding: 25px
+
+            /* Adjusted padding on smaller screens */
+        }
+        .question button {
+            padding: 15px; /* More comfortable padding for tap targets on smaller screens */
+            margin: 10px 0; /* More space between buttons on smaller screens */
+            font-size: 16px; /* Larger font size for readability on smaller screens */
+        }
+    }
+    
+    /* Adding a bit of animation to the selected option */
+    .quiz-container .question button.selected {
+        background-color: #434adf; /* Change background for selected option */
+        color: #ffffff; /* Change text color to ensure readability */
+        font-weight: bold; /* Make selected option text bold */
+        box-shadow: 0 0 10px rgba(91, 98, 246, 0.5); /* Subtle glow effect */
+    }
+    
+    /* Animation for pulse effect on selected option */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(91, 98, 246, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(91, 98, 246, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(91, 98, 246, 0);
+        }
+    }
+    
+    /* Add a subtle transition effect to the question container when a selection is made */
+    .quiz-container .question {
+        transition: box-shadow 0.3s ease;
+    }
+    
+    .quiz-container .question.selected {
+        box-shadow: 0 0 20px rgba(91, 98, 246, 0.5);
+    }
+        
+
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+        max-width: 500px; /* Maximum width */
+        border-radius: 10px; /* Rounded corners */
+    }
+    
+    .close-button {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close-button:hover,
+    .close-button:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    input[type=text], input[type=password] {
+        width: calc(100% - 20px);
+        padding: 12px 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        border-radius: 5px; /* Rounded input fields */
+    }
+    
+    /* Additional button styling */
+    #sign-in-button {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #5b62f6;
+    }
+    
+
+    
+
+      
+
+
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f7ff; 
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #0079bf, #5067c5);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+.quiz-container {
+    padding: 20px;
+}
+
+.btn {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto;
+    background: #0079bf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #005fa3;
+}
+
+.hide {
+    display: none;
+}
+
+.results-container {
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+.question {
+    background: #f9f9f9;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #0079bf;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .btn {
+        width: 90%;
+    }
+}
+
+.quiz-container .question button {
+    display: block; 
+    width: 100%; 
+    margin: 5px 0; 
+    text-align: left; 
+}
+
+.quiz-container .question button.selected {
+    background-color: #005fa3; 
+    color: #ffffff; 
+    font-weight: bold;
+
+}     */
