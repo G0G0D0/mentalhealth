@@ -233,6 +233,30 @@ header p {
         padding: 10px 18px;
         background-color: #5b62f6;
     }
+
+    .day-btn {
+        background: #5b62f6; /* Consistent with your button styling */
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        padding: 10px 20px;
+        margin: 5px; /* Spacing between buttons */
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .day-btn:hover, .day-btn:focus {
+        transform: translateY(-2px); /* Lift effect */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow for depth */
+    }
+
+    .quiz-container {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    
+    
     
 
     
