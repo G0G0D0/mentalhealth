@@ -1,8 +1,58 @@
-
-
-
-
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Awareness Quiz</title>
+    <link rel="stylesheet" href="style.css"> 
+    
+</head>
+<body>
+
+    <div id="sign-in-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Sign In</h2>
+            <input type="text" id="user-name" placeholder="Your Name" required>
+            <input type="password" id="user-password" placeholder="Password (Optional)">
+            <button id="sign-in-button" class="btn">Sign In</button>
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <header>
+            <h1>Mental Health Quiz</h1>
+            <p>Discover more about your mental wellness.</p>
+        </header>
+        <div class="day-selection">
+            <button class="day-btn" id="day1-btn">Day 1</button>
+            <button class="day-btn" id="day2-btn">Day 2</button>
+            <button class="day-btn" id="day3-btn">Day 3</button>
+            <button class="day-btn" id="day4-btn">Day 4</button>
+            <button class="day-btn" id="day5-btn">Day 5</button>
+            <button class="day-btn" id="day6-btn">Day 6</button>
+            <button class="day-btn" id="day7-btn">Day 7</button>
+        </div>
+        
+        <main id="quiz-container" class="quiz-container">
+        </main>
+        <!-- <button id="next-button" class="btn">Next Day</button> -->
+        <button id="finish-button" class="btn hide">Finish</button>
+        <div id="results-container" class="results-container hide"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,7 +91,7 @@
 
 
 
-
+ -->
 
 
 
