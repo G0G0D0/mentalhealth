@@ -2,6 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Mental Health Awareness Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://js.clerk.dev/v1"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+        Clerk('load', {
+          frontendApi: 'sk_test_qQ9SS9EVkFAxAAGfTprfUaWr0tbX0w3G6ePyKyY55m',
+          afterSignIn: () => window.location.reload()
+        });
+      });
+    </script>
+</head>
+<body>
+
+    <div id="about-us-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>About Us</h2>
+            <p>One of the most commonly prevalent "stuffs of concern" among the people of the youth generation is Depression. Depression is a mental health disorder characterized by persistent feelings of sadness, hopelessness, and loss of interest or pleasure in activities. It can affect how you think, feel, and handle daily activities. Depression can vary in severity and duration, and it often requires professional treatment such as therapy, medication, or a combination of both.</p>
+            <p>We guys are not any exception to this and have seriously been through a lot in our lives as well. This is an initiative from a group of a few strong-hearted fellows who have the courage to overcome the struggles of life, who genuinely care about your mental well-being not in any way lesser.</p>
+            <p>And here we are to provide you with some sort of guidance towards your mental well-being as such. This has been achieved by pure association with Ms. Niththya, a qualified mental health professional. We believe that everyone deserves access to quality mental health care, and we are committed to providing the utmost guidance you need.</p>
+            <p>Our team is dedicated to creating a safe and inclusive space where you can find guidance, hope, and encouragement.</p>
+            <p>Thank you for choosing us as your partner in mental health. We believe in you. Together we can create a brighter, healthier future!</p>
+        </div>
+    </div>
+    
+
+    <div id="sign-in-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Sign In</h2>
+            <input type="text" id="user-name" placeholder="Your Name" required>
+            <input type="password" id="user-password" placeholder="Password (Optional)">
+            <button id="sign-in-button" class="btn">Sign In</button>
+        </div>
+    </div>
+
+<div id="clerk-sign-in"></div>
+
+<div class="container">
+    <header>
+        <h1>Mental Health Quiz</h1>
+        <p>Discover more about your mental wellness.</p>
+        <!-- Place this where it fits best in your layout -->
+<a href="#" id="about-us-trigger">About Us</a>
+
+    </header>
+    <div class="day-selection">
+        <button class="day-btn" id="day1-btn">Day 1</button>
+        <button class="day-btn" id="day2-btn">Day 2</button>
+        <button class="day-btn" id="day3-btn">Day 3</button>
+        <button class="day-btn" id="day4-btn">Day 4</button>
+        <button class="day-btn" id="day5-btn">Day 5</button>
+        <button class="day-btn" id="day6-btn">Day 6</button>
+        <button class="day-btn" id="day7-btn">Day 7</button>
+    </div>
+    
+    <main id="quiz-container" class="quiz-container">
+    </main>
+    <button id="finish-button" class="btn hide">Finish</button>
+    <div id="results-container" class="results-container hide"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health Awareness Quiz</title>
     <link rel="stylesheet" href="style.css"> 
@@ -43,7 +117,7 @@
     </div>
     <script src="script.js"></script>
 </body>
-</html>
+</html> -->
 
 
 
